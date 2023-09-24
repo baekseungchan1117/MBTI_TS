@@ -1,12 +1,19 @@
 import React from 'react';
-// import logo from './logo.svg';
 import './App.css';
+import MainPage from './pages/MainPage';
+import QuestionPage from './pages/QuestionPage';
+import ResultPage from './pages/ResultPage';
+import {BrowserRouter as Router, Routes,Route } from "react-router-dom";
 
-function App() {
+function App(): React.ReactElement {
   return (
-    <div className="App">
-      이곳은 메인페이지입니다.
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<MainPage />}/>
+        <Route path='/question' element={<QuestionPage />}/>
+        <Route path='/reuslt' element={<ResultPage />}/>
+      </Routes>
+    </Router>
   );
 }
 
